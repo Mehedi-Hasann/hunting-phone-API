@@ -25,7 +25,7 @@ const displayPhones = (phones,isShowAll) => {
         showAllContainer.classList.add('hidden');
     }
 
-    console.log('is show all : ',isShowAll);
+    // console.log('is show all : ',isShowAll);
     // display only first 12 phones if not show all
     if(!isShowAll){
         phones = phones.slice(0,12);
@@ -33,7 +33,7 @@ const displayPhones = (phones,isShowAll) => {
     // console.log(phones.length);
 
   phones.forEach((phone) => {
-    console.log(phone);
+    // console.log(phone);
     //step 2 : create a div
     const phoneCard = document.createElement("div");
     phoneCard.classList = `card bg-gray-100 p-4 shadow-sm`;
@@ -48,8 +48,8 @@ const displayPhones = (phones,isShowAll) => {
                 A card component has a figure, a body part, and inside body
                 there are title and actions parts
               </p>
-              <div class="card-actions justify-end">
-                <button class="btn btn-primary">Buy Now</button>
+              <div class="card-actions justify-center">
+                <button onclick="handleShowDetails('${phone.slug}')" class="btn btn-primary">Show Details</button>
               </div>
             </div>
     `;
@@ -58,6 +58,12 @@ const displayPhones = (phones,isShowAll) => {
   });
   // hide loading spinner
   toggleLoadingSpinner(false);
+}
+
+//
+const handleShowDetails = async(id) =>{
+    // console.log(id);
+
 }
 
 //handle search button
